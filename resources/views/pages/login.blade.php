@@ -1,5 +1,6 @@
 @extends('layout.main')
-@section('title','Login')
+@section('color', '#3E5F44')
+@section('title', 'Login')
 @section('content')
     <section class="wrap__section">
         <div class="container">

@@ -1,5 +1,14 @@
 @extends('layout.main')
-@section('title','Register')
+{{-- @section('color','#3E5F44') --}}
+@section('title', 'Register')
+@push('color')
+<style>
+    .h1{
+        background-color:rgb(162, 216, 80)
+        /* text-align: center; */
+    }
+</style>
+@endpush
 @section('content')
     <section class="wrap__section">
         <div class="container">

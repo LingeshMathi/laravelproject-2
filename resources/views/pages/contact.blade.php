@@ -1,5 +1,6 @@
 @extends('layout.main')
-@section('title','Contact')
+@section('color', 'orange')
+@section('title', 'Contact')
 @section('content')
     <section>
         <div class="container">

@@ -1,5 +1,14 @@
  @extends('layout.main')
- @section('title','Blog-Details')
+ {{-- @section('color', 'blue') --}}
+ @push('color')
+<style>
+    .h1{
+        background-color:rgb(22, 112, 134)
+        /* text-align: center; */
+    }
+</style>
+@endpush
+ @section('title', 'Blog-Details')
  @section('content')
      <section class="pb-80">
          <div class="container">

@@ -1,5 +1,14 @@
 @extends('layout.main')
-@section('title','About')
+@section('title', 'About')
+{{-- @section('color', 'red') --}}
+@push('color')
+    <style>
+        .h1 {
+            background-color: rgb(44, 70, 5)
+        }
+    </style>
+@endpush
+
 @section('content')
     <section>
         <div class="container">
@@ -41,7 +50,7 @@
                         </p>
 
                         <figure class="float-left mr-3">
-                        <img src="{{asset('images/newsimage1.png')}}" alt="" class="img-fluid">
+                            <img src="{{ asset('images/newsimage1.png') }}" alt="" class="img-fluid">
                         </figure>
                         <p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
