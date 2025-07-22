@@ -63,6 +63,12 @@
 
                 <div class="collapse navbar-collapse justify-content-between" id="main_nav99">
                     <ul class="navbar-nav ml-auto ">
+                         <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('student.index') }}">INDEX</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('student.create') }}">CREATE</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('home') }}">home</a>
                         </li>

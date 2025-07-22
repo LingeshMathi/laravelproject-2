@@ -3,30 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homecontroller;
 
-Route::get('/', function () {
-    return view('pages.home');
-});
-Route::get('/about',function () {
-    return view('pages.about');
-});
-Route::get('/blog', function () {
-    return view('pages.blog');
-});
-Route::get('/blog-details', function () {
-    return view('pages.blog-details');
-});
-Route::get('/error', function () {
-    return view('pages.error');
-});
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
-Route::get('/login', function () {
-    return view('pages.login');
-});
-Route::get('/register', function () {
-    return view('pages.register');
-});
+use App\Http\Controllers\StudentController;
+
+Route::resource('student', StudentController::class);
+
+
 
 Route::get('/about',[App\Http\Controllers\Homecontroller::class,'about'])->name('about');
 
@@ -43,6 +24,32 @@ Route::get('/error',[App\Http\Controllers\Homecontroller::class,'error'])->name(
 Route::get('/home',[App\Http\Controllers\Homecontroller::class,'home'])->name('home');
 
 Route::get('/register',[App\Http\Controllers\Homecontroller::class,'register'])->name('register');
+
+// Route::get('/', function () {
+//     return view('pages.home');
+// });
+// Route::get('/about',function () {
+//     return view('pages.about');
+// });
+// Route::get('/blog', function () {
+//     return view('pages.blog');
+// });
+// Route::get('/blog-details', function () {
+//     return view('pages.blog-details');
+// });
+// Route::get('/error', function () {
+//     return view('pages.error');
+// });
+// Route::get('/contact', function () {
+//     return view('pages.contact');
+// });
+// Route::get('/login', function () {
+//     return view('pages.login');
+// });
+// Route::get('/register', function () {
+//     return view('pages.register');
+// });
+
 
 
 
