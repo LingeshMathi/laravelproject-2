@@ -7,20 +7,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <style>
+        @stack('styles');
+
+    </style>
 </head>
 
 <body>
 
 
     @include('layout/header')
-    @stack('color')
-    <h1 class="h1" style="text-align: center">Yarl IT
+    {{-- @stack('color')
+    <h1 class="h1" style="text-align: center">
         @if (isset($name))
             {{ $name }}
         @else
             {{ 'Yarl IT' }}
         @endif
-    </h1>
+    </h1> --}}
 
     @yield('content')
     @include('layout/footer')

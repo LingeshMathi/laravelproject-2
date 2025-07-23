@@ -1,26 +1,55 @@
-
 @extends('layout.main')
-@push('color')
-    <style>
-       .form {
-           background-color: rgb(104, 141, 106);
-           padding: 20px;
-           border-radius: 10px;
-           margin: auto;
-           width: 50%;
-           height: 200px;
-       }
-    </style>
+@push('styles')
+    #body{
+    background-color:#77BEF0;
+    border-radius:15px;
+    }
+    #rad {
+    border-radius:15px;
+    }
+@endpush
+
 @section('content')
-    <form class="form" action="/student" method="post">
-        @csrf
-        <label for="fname">Fistname:</label>
-        <input type="text" id="name" name="fname"><br><br>
+    <div class="container mt-4 mb-4"id="body">
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6 mt-4 mb-4 bg-light" id="rad">
+                <h2 class="text-center mt-3 text-primary">Create Page</h2>
+                <form class="form" action="/student" method="post">
+                    @csrf
+                    <table style="width:100%;">
+                        <div class="mt-4">
+                            <tr>
+                                <td>
+                                    <label class="col-form-label" for="fname">Fistname:</label>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" id="fname" name="fname">
+                                </td>
+                            </tr>
+                        </div>
 
-        <label for="lname">Lastname:</label>
-        <input type="text" id="name" name="lname"><br>
+                        <tr>
+                            <td>
+                                <label class="col-form-label mt-2" for="lname">Lastname:</label>
+                            </td>
+                            <td>
+                                <input class="form-control mt-2" type="text" id="lname" name="lname">
+                            </td>
+                        </tr>
 
-        <input type="submit" value="Submit">
-    </form>
-   @endsection
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input class="btn btn-success float-right mt-2 mb-4" type="submit" value="submit"
+                                    id="button">
+                            </td>
+                        </tr>
 
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection

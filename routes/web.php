@@ -25,9 +25,11 @@ Route::get('/home',[App\Http\Controllers\Homecontroller::class,'home'])->name('h
 
 Route::get('/register',[App\Http\Controllers\Homecontroller::class,'register'])->name('register');
 
-// Route::get('/', function () {
-//     return view('pages.home');
-// });
+Route::get('/', function () {
+    return view('pages.home');
+});
+
+
 // Route::get('/about',function () {
 //     return view('pages.about');
 // });

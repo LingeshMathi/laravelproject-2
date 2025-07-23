@@ -1,34 +1,40 @@
 @extends('layout.main')
-@push('color')
-    <style>
-        .frm {
-            background-color: rgb(230, 221, 173);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-    </style>
+@push('styles')
+    #body{
+    background-color:#77BEF0;
+    border-radius:15px;
+    }
+    #rad {
+    border-radius:15px;
+    }
+    table{
+    width:100%;
 
+    }
 @endpush
 @section('content')
-    <form class="frm" action="/student" method="post">
-        @csrf
-        <table border="1" class="table">
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Address</th>
-            </tr>
-            <tr>
-                <td>Mathi</td>
-                <td>12</td>
-                <td>Jaffna</td>
-            </tr>
-        </table>
-       <button><a href="/student">back</a></button>
-    </form>
+    <div class="container mt-3 mb-3"id="body">
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-6 mt-3 mb-3 bg-light"id="rad">
+                <h2 class="text-center mt-3 text-primary">Show Student</h2>
+
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                    </tr>
+                    <tr class=" border-bottom">
+                        <td>Janan</td>
+                        <td>12</td>
+                        <td>Jaffna</td>
+                    </tr>
+                </table>
+
+                <button class="btn btn-primary mb-3 "><a href="/student">Back</a></button>
+            </div>
+        </div>
+    </div>
 @endsection
