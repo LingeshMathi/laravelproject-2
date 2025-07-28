@@ -62,12 +62,39 @@
                 </figure>
 
                 <div class="collapse navbar-collapse justify-content-between" id="main_nav99">
+                     <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Students </a>
+                            <ul class="dropdown-menu animate fade-up">
+                                <li><a class="dropdown-item icon-arrow" href="/students"> Students
+                                        detail
+                                    </a></li>
+                                <li><a class="dropdown-item" href="/students/create"> Create student </a>
+                            </ul>
+                        </li>
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Subjects </a>
+                            <ul class="dropdown-menu animate fade-up">
+                                <li><a class="dropdown-item icon-arrow" href="/subjects"> subjects
+                                        detail
+                                    </a></li>
+                                <li><a class="dropdown-item" href="/subjects/create"> Create subject </a>
+                            </ul>
+                        </li>
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Grades </a>
+                            <ul class="dropdown-menu animate fade-up">
+                                <li><a class="dropdown-item icon-arrow" href="/grades"> Grades
+                                        detail
+                                    </a></li>
+                                <li><a class="dropdown-item" href="/grades/create"> Create grade </a>
+                            </ul>
+                        </li>
                     <ul class="navbar-nav ml-auto ">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('student.index') }}">INDEX</a>
+                            <a class="nav-link active" href="/students">INDEX</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('student.create') }}">CREATE</a>
+                            <a class="nav-link active" href="/students/create">CREATE</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('home') }}">home</a>
@@ -157,6 +184,7 @@
                 <div class="modal-body">
                     <nav class="list-group list-group-flush">
                         <ul class="navbar-nav ">
+
                             <li class="nav-item">
                                 <a class="nav-link active text-dark" href="{{ route('home') }}"> Home</a>
                             </li>

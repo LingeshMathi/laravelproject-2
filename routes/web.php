@@ -4,9 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homecontroller;
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\GradeController;
+use App\Http\Controllers\SubjectController;
 
-Route::resource('student', StudentController::class);
+Route::resource('students', StudentController::class);
 
+Route::resource('grades', GradeController::class);
+Route::resource('subjects', SubjectController::class);
+
+
+
+Route::get('/', function () {
+    return view('home');
+});
 
 
 Route::get('/about',[App\Http\Controllers\Homecontroller::class,'about'])->name('about');
@@ -21,13 +31,10 @@ Route::get('/login',[App\Http\Controllers\Homecontroller::class,'login'])->name(
 
 Route::get('/error',[App\Http\Controllers\Homecontroller::class,'error'])->name('error');
 
-Route::get('/home',[App\Http\Controllers\Homecontroller::class,'home'])->name('home');
+Route::get('/',[App\Http\Controllers\Homecontroller::class,'home'])->name('home');
 
 Route::get('/register',[App\Http\Controllers\Homecontroller::class,'register'])->name('register');
 
-Route::get('/', function () {
-    return view('pages.home');
-});
 
 
 // Route::get('/about',function () {

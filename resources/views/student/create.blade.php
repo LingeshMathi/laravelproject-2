@@ -1,12 +1,14 @@
 @extends('layout.main')
 @push('styles')
-    #body{
+ #body{
     background-color:#77BEF0;
     border-radius:15px;
     }
     #rad {
     border-radius:15px;
     }
+
+
 @endpush
 
 @section('content')
@@ -16,39 +18,61 @@
             </div>
             <div class="col-sm-6 mt-4 mb-4 bg-light" id="rad">
                 <h2 class="text-center mt-3 text-primary">Create Page</h2>
-                <form class="form" action="/student" method="post">
+                <form action="/students" method="post">
                     @csrf
-                    <table style="width:100%;">
-                        <div class="mt-4">
-                            <tr>
-                                <td>
-                                    <label class="col-form-label" for="fname">Fistname:</label>
-                                </td>
-                                <td>
-                                    <input class="form-control" type="text" id="fname" name="fname">
-                                </td>
-                            </tr>
-                        </div>
-
+                    <table>
                         <tr>
+                            <th><label for="adno">Admission Number:</label></th>
+                            <td> <input type="text" id="adno" name="admission_number" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="sname">Student Name:</label></th>
+                            <td> <input type="text" id="sname" name="student_name" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="faname">Father Name:</label></th>
+                            <td> <input type="text" id="faname" name="father_name" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="gender">Gender:</label></th>
                             <td>
-                                <label class="col-form-label mt-2" for="lname">Lastname:</label>
-                            </td>
-                            <td>
-                                <input class="form-control mt-2" type="text" id="lname" name="lname">
+                                <select id="gender" name="gender" required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </td>
                         </tr>
-
                         <tr>
-                            <td></td>
-                            <td>
-                                <input class="btn btn-success float-right mt-2 mb-4" type="submit" value="submit"
-                                    id="button">
+                            <th><label for="phone">Phone Number:</label></th>
+                            <td> <input type="text" id="phone" name="phone_number" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="icno">NIC Number:</label></th>
+                            <td> <input type="text" id="icno" name="nic_number" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="date">Date of birth:</label></th>
+                            <td> <input type="date" id="date" name="date_of_birth" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="address">Address:</label></th>
+                            <td> <input type="text" id="address" name="student_address" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="join">Join Date:</label></th>
+                            <td> <input type="date" id="join" name="join_data" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <input type="submit" value="Submit" class="btn btn-success mt-3">
                             </td>
                         </tr>
-
                     </table>
+
+
                 </form>
+
             </div>
         </div>
     </div>

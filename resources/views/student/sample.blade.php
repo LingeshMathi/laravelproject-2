@@ -1,21 +1,23 @@
-@extends('layout.main')
-@push('styles')
 
-#body{
-background-color:#77BEF0;
-border-radius:15px;
-}
-#rad {
-border-radius:15px;
-}
-@endpush
+<html>
+<head>
+    <meta charset="utf-8">
 
-@section('content')
-    <div class="container mt-3 mb-3" >
+    <title>@yield('title')</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <style>
+        @stack('styles');
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3 mb-3" id="body">
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-14 mt-4 mb-4 bg-light" id="rad">
-                <h2 class="text-center mt-3 text-primary" id="body">Students Details</h2>
+                <h2 class="text-center mt-3 text-primary">Students Details</h2>
                 <table class=" table table-bordered mt-4 mb-4">
                     <tr>
                         <th>Admission Number</th>
@@ -37,7 +39,7 @@ border-radius:15px;
                             <td>{{ $student->gender }}</td>
                             <td>{{ $student->phone_number }}</td>
                             <td>{{ $student->nic_number }}</td>
-                            <td>{{ $student->address }}</td>
+                            <td>{{ $student->address}}</td>
                             <td>{{ $student->date_of_birth }}</td>
                             <td>{{ $student->join_date }}</td>
                             <td><a href="/students/{{ $student->id }}/edit" class="btn btn-success">Edit</a></td>
@@ -56,4 +58,8 @@ border-radius:15px;
             </div>
         </div>
     </div>
-@endsection
+</body>
+</html>
+
+
+
