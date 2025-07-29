@@ -28,7 +28,7 @@
                         <tr>
                             <td>{{ $grade->grade_name }}</td>
                             <td>{{ $grade->grade_color }}</td>
-                            <td>{{ $grade->garde_number }}</td>
+                            <td>{{ $grade->grade_number }}</td>
                             <td>{{ $grade->grade_group }}</td>
 
                             <td><a href="/grades/{{ $grade->id }}/edit" class="btn btn-success">Edit</a></td>

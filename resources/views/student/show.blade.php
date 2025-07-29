@@ -15,7 +15,7 @@
             <div class="col-sm-3">
             </div>
             <div class="col-sm-6 mt-3 mb-3 bg-light"id="rad">
-                <h2 class="text-center mt-3 text-primary">Show Sthudent</h2>
+                <h2 class="text-center mt-3 text-primary">Show Student</h2>
 
                 <table class="table">
                     <tr>
@@ -60,7 +60,7 @@
 
 
 
-                
+
                 <hr color="red">
                 <h1 align="center">Subjects Details</h1>
                 <table class=" table table-bordered mt-4 mb-4">
