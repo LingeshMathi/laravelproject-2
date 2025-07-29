@@ -27,7 +27,6 @@ class StudentController extends Controller
     {
 
         return view('student/create');
-
     }
 
     /**
@@ -36,18 +35,20 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $student=new Student;
-        $student->admission_number=$request->admission_number;
-        $student->student_name=$request->student_name;
-        $student->father_name=$request->father_name;
-        $student->gender=$request->gender;
-        $student->phone_number="4444";
-        $student->nic_number=$request->nic_number;
-        $student->date_of_birth=$request->date_of_birth;
-        $student->student_address=$request->student_address;
-        $student->join_data=$request->join_data;
+        $student = new Student;
+        $student->admission_number = $request->admission_number;
+        $student->student_name = $request->student_name;
+        $student->father_name = $request->father_name;
+        $student->gender = $request->gender;
+        $student->grade_id = "10";
+        $student->nic_id = $request->nic_number;
+        $student->phone_number = "4444";
+        $student->nic_number = $request->nic_number;
+        $student->date_of_birth = $request->date_of_birth;
+        $student->student_address = $request->student_address;
+        $student->join_data = $request->join_data;
         $student->save();
-       return redirect('/students');
+        return redirect('/students');
     }
 
     /**
@@ -56,9 +57,9 @@ class StudentController extends Controller
     public function show(string $id)
 
     {
-        $student=Student::find($id);
-
-        return view('student/show',compact('student'));
+        $student = Student::find($id);
+        $subjects = Student::find($id)->subjects;
+        return view('student/show', compact('student','subjects'));
     }
 
     /**
@@ -66,9 +67,9 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-       $student=Student::find($id);
+        $student = Student::find($id);
 
-        return view('student/edit',compact('student'));
+        return view('student/edit', compact('student'));
     }
 
     /**
@@ -76,18 +77,18 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $student=Student::find($id);
-        $student->admission_number=$request->admission_number;
-        $student->student_name=$request->student_name;
-        $student->father_name=$request->father_name;
-        $student->gender=$request->gender;
-        $student->phone_number=$request->$phone_number;
-        $student->nic_number->$request->$nic_number;
-        $student->date_of_birth=$request->$date_of_birth;
-        $student->address=$request->$address;
-        $student->join_date=$request->join_date;
+        $student = Student::find($id);
+        $student->admission_number = $request->admission_number;
+        $student->student_name = $request->student_name;
+        $student->father_name = $request->father_name;
+        $student->gender = $request->gender;
+        $student->phone_number = $request->phone_number;
+        $student->nic_number->$request->nic_number;
+        $student->date_of_birth = $request->date_of_birth;
+        $student->address = $request->address;
+        $student->join_date = $request->join_date;
         $student->save();
-       return redirect('/students');
+        return redirect('/students');
     }
 
     /**
@@ -95,9 +96,8 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-       $studet=Student::find($id);
-       $student->delete();
-       return redirect('/students');
+        $student = Student::find($id);
+        $student->delete();
+        return redirect('/students');
     }
-
 }

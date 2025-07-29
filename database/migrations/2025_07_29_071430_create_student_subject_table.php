@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grades', function (Blueprint $table) {
+        Schema::create('student_subject', function (Blueprint $table) {
             $table->id();
             $table->integer('student_id');
-            $table->string('grade_name',length:50);
-            $table->string('grade_color',length:50);
-            $table->string('grade_number',length:50);
-            $table->string('grade_group',length:50);
+            $table->integer('subject_id');
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('grades');
+        Schema::dropIfExists('student_subject');
     }
 };

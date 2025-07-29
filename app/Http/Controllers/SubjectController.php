@@ -45,8 +45,9 @@ class SubjectController extends Controller
     public function show(string $id)
     {
          $subject=Subject::find($id);
+         $students = Subject::find($id)->students;
 
-        return view('subject/show',compact('subject'));
+        return view('subject/show',compact('subject','students'));
     }
 
     /**

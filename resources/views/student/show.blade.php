@@ -1,7 +1,6 @@
 @extends('layout.main')
 @push('styles')
-
- #body{
+    #body{
     background-color:#77BEF0;
     border-radius:15px;
     }
@@ -57,6 +56,29 @@
                     </tr>
                 </table>
 
+
+
+
+
+                
+                <hr color="red">
+                <h1 align="center">Subjects Details</h1>
+                <table class=" table table-bordered mt-4 mb-4">
+                    <tr>
+                        <th>Subject Name</th>
+                        <th>Subject index</th>
+                        <th>Subject Order Number</th>
+                        <th>Subject Type</th>
+                    </tr>
+                    @foreach ($subjects as $subject)
+                        <tr>
+                            <td>{{ $subject->subject_name }}</td>
+                            <td>{{ $subject->subject_index }}</td>
+                            <td>{{ $subject->subject_number }}</td>
+                            <td>{{ $subject->subject_type }}</td>
+                        </tr>
+                    @endforeach
+                </table>
                 <button class="btn mb-3 "><a href="/students">Back</a></button>
             </div>
         </div>
