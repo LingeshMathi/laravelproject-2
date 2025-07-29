@@ -12,7 +12,7 @@ class Grade extends Model
     {
         return $this->hasMany(Student::class);
     }
-     public function subjects(): BelongsToMany
+    public function subjects(): BelongsToMany
     {
         return $this->belongsToMany(Subject::class);
     }
